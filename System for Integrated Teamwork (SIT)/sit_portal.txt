@@ -1,0 +1,5 @@
+PORTAL_STUDENT|Lidya|S200|lidya@sit.edu|Team Lead
+PORTAL_STUDENT|Nahom|S201|nahom@sit.edu|Coordinator
+PORTAL_STUDENT|Mekdes|S202|mekdes@sit.edu|Member
+PORTAL_MILESTONE|Website|First progress check-in|2026-12-01|Progress Check-in
+PORTAL_MILESTONE|Website|Final submission|2026-12-15|Milestone
