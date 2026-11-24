@@ -1,39 +1,63 @@
-
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+/** Holds one entry for a project log. */
 public class LogEntry {
-
-    public static final String LEVEL = "Level 1";
-
     private String author;
     private String time;
     private String message;
 
+    /**
+     * Creates a new LogEntry.
+     * @param author the author
+     * @param message the message
+     */
     public LogEntry(String author, String message) {
         this.author = author;
         this.message = message;
         this.time = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
     }
 
+    /**
+     * Creates a new LogEntry.
+     * @param author the author
+     * @param time the time
+     * @param message the message
+     */
     public LogEntry(String author, String time, String message) {
         this.author = author;
         this.time = time;
         this.message = message;
     }
 
+    /**
+     * Gets author.
+     * @return the result
+     */
     public String getAuthor() {
         return this.author;
     }
 
+    /**
+     * Gets time.
+     * @return the result
+     */
     public String getTime() {
         return this.time;
     }
 
+    /**
+     * Gets message.
+     * @return the result
+     */
     public String getMessage() {
         return this.message;
     }
 
+    /**
+     * Returns a short text for this object.
+     * @return the result
+     */
     public String toString() {
         String text = "[" + this.time + "] " + this.author + ": " + this.message;
         return text;
