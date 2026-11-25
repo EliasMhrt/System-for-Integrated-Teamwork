@@ -110,7 +110,13 @@ public class Task {
      * @param status the status
      */
     public void setStatus(String status) {
-        this.status = status;
+        boolean allowed = false;
+        if (status.equals(STATUS_TO_DO) || status.equals(STATUS_DOING) || status.equals(STATUS_DONE)) {
+            allowed = true;
+        }
+        if (allowed) {
+            this.status = status;
+        }
     }
 
     /**
