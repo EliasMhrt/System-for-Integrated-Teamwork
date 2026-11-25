@@ -28,6 +28,15 @@ public class LogEntry {
         this.author = author;
         this.time = time;
         this.message = message;
+        if (this.author.length() == 0) {
+            this.author = "Unknown";
+        }
+        if (this.time.length() == 0) {
+            this.time = "unknown time";
+        }
+        if (this.message.length() == 0) {
+            this.message = "No message";
+        }
     }
 
     /**
