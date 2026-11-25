@@ -170,6 +170,12 @@ public class Project {
      * @return the result
      */
     public Task addTask(String title, String description, String deadline, String assignedStudentId) {
+        if (title == null || title.length() == 0) {
+            return null;
+        }
+        if (deadline == null || deadline.length() == 0) {
+            return null;
+        }
         Task newTask = new Task(this.nextTaskId, title, description, deadline, assignedStudentId);
         this.tasks.add(newTask);
         this.nextTaskId = this.nextTaskId + 1;
@@ -184,6 +190,12 @@ public class Project {
      * @return the result
      */
     public Milestone addMilestone(String title, String date, String kind) {
+        if (title == null || title.length() == 0) {
+            return null;
+        }
+        if (date == null || date.length() == 0) {
+            return null;
+        }
         Milestone newMilestone = new Milestone(title, date, kind);
         this.milestones.add(newMilestone);
         return newMilestone;
@@ -195,6 +207,9 @@ public class Project {
      * @param message the message
      */
     public void addLog(String author, String message) {
+        if (message == null || message.length() == 0) {
+            return;
+        }
         LogEntry entry = new LogEntry(author, message);
         this.log.add(entry);
     }
@@ -290,4 +305,3 @@ public class Project {
         return text;
     }
 }
-
