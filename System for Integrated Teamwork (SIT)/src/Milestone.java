@@ -46,6 +46,20 @@ public class Milestone {
     }
 
     /**
+     * Sets kind.
+     * @param kind the kind
+     */
+    public void setKind(String kind) {
+        boolean allowed = false;
+        if (kind.equals(KIND_CHECKIN) || kind.equals(KIND_MILESTONE)) {
+            allowed = true;
+        }
+        if (allowed) {
+            this.kind = kind;
+        }
+    }
+
+    /**
      * Returns a short text for this object.
      * @return the result
      */
