@@ -118,7 +118,13 @@ public class Student {
      * @param role the role
      */
     public void setRole(String role) {
-        this.role = role;
+        boolean allowed = false;
+        if (role.equals(ROLE_LEAD) || role.equals(ROLE_COORDINATOR) || role.equals(ROLE_MEMBER)) {
+            allowed = true;
+        }
+        if (allowed) {
+            this.role = role;
+        }
     }
 
     /**
@@ -126,7 +132,14 @@ public class Student {
      * @param notifyDays the number of notification days
      */
     public void setNotifyDays(int notifyDays) {
-        this.notifyDays = notifyDays;
+        int chosen = notifyDays;
+        if (chosen < 1) {
+            chosen = 1;
+        }
+        if (chosen > 30) {
+            chosen = 30;
+        }
+        this.notifyDays = chosen;
     }
 
     /**
