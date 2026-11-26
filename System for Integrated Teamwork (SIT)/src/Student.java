@@ -151,6 +151,22 @@ public class Student {
     }
 
     /**
+     * Checks if text matches the student ID or number.
+     * @param text the text to match
+     * @return the result
+     */
+    public boolean matchesIdOrNumber(String text) {
+        boolean matched = false;
+        if (this.id.equals(text)) {
+            matched = true;
+        }
+        if (this.studentNumber.equals(text)) {
+            matched = true;
+        }
+        return matched;
+    }
+
+    /**
      * Returns a short text for this object.
      * @return the result
      */
