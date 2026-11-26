@@ -262,6 +262,26 @@ public class Project {
     }
 
     /**
+     * Gets tasks and milestones that are coming soon.
+     * @return the result
+     */
+    public ArrayList<String> getUpcomingItems() {
+        ArrayList<String> items = new ArrayList<String>();
+        int i = 0;
+        while (i < this.milestones.size()) {
+            items.add(this.milestones.get(i).toString());
+            i = i + 1;
+        }
+        int j = 0;
+        while (j < this.tasks.size()) {
+            Task current = this.tasks.get(j);
+            items.add(current.getDeadline() + " | " + current.getTitle());
+            j = j + 1;
+        }
+        return items;
+    }
+
+    /**
      * Gets the number of tasks that are done.
      * @return the result
      */
