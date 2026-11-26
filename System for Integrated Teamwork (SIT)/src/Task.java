@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 /** Holds information about one task. */
 public class Task {
     /** The status to do value. */
@@ -137,6 +139,19 @@ public class Task {
             answer = true;
         }
         return answer;
+    }
+
+    /**
+     * Checks if the item is past its deadline.
+     * @return the result
+     */
+    public boolean isOverdue() {
+        boolean overdue = false;
+        String today = LocalDate.now().toString();
+        if (this.deadline.compareTo(today) < 0) {
+            overdue = true;
+        }
+        return overdue && this.isDone() == false;
     }
 
     /**
