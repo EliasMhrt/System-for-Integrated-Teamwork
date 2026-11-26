@@ -64,6 +64,18 @@ public class LogEntry {
     }
 
     /**
+     * Gets a short form of the time.
+     * @return the result
+     */
+    public String getShortTime() {
+        String shortTime = this.time;
+        if (shortTime.length() > 10) {
+            shortTime = shortTime.substring(0, 10);
+        }
+        return shortTime;
+    }
+
+    /**
      * Returns a short text for this object.
      * @return the result
      */
