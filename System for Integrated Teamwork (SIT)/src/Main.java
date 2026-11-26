@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static final String LEVEL = "Level 1";
+    public static final String LEVEL = "Level 2";
 
     private static final String DATA_FILE = "data.txt";
     private static final String PORTAL_FILE = "sit_portal.txt";
@@ -124,6 +124,7 @@ public class Main {
         System.out.println();
         System.out.println("===== SYSTEM FOR INTEGRATED TEAMWORK (SIT) =====");
         System.out.println("Signed in as " + user.getName() + " | Role: " + user.getRole());
+        System.out.println("Build level: " + LEVEL);
         System.out.println("1. My dashboard");
         System.out.println("2. View all projects");
         System.out.println("3. Open project dashboard");
