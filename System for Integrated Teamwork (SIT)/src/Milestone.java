@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 /** Holds information about one milestone. */
 public class Milestone {
     /** The kind checkin value. */
@@ -57,6 +59,19 @@ public class Milestone {
         if (allowed) {
             this.kind = kind;
         }
+    }
+
+    /**
+     * Checks if the item is past its deadline.
+     * @return the result
+     */
+    public boolean isOverdue() {
+        boolean overdue = false;
+        String today = LocalDate.now().toString();
+        if (this.date.compareTo(today) < 0) {
+            overdue = true;
+        }
+        return overdue;
     }
 
     /**
