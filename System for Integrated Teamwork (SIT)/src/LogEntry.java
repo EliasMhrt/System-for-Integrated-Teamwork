@@ -64,6 +64,14 @@ public class LogEntry {
     }
 
     /**
+     * Gets a short summary of the item.
+     * @return the result
+     */
+    public String getSummary() {
+        return this.getShortTime() + " | " + this.author + " | " + this.message;
+    }
+
+    /**
      * Gets a short form of the time.
      * @return the result
      */
