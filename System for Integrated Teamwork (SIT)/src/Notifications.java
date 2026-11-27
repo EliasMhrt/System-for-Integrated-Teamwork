@@ -31,7 +31,7 @@ public class Notifications {
                     Project project = projects.get(i);
                     if (project.isStudentOnTeam(student.getId())) {
                         int projectDays = daysUntil(project.getDeadline());
-                        if (projectDays <= student.getNotifyDays()) {
+                        if (isDueSoon(project.getDeadline(), student.getNotifyDays())) {
                             this.addMessage(messages, "Project deadline: " + project.getName(),
                                     project.getDeadline(), projectDays);
                         }
@@ -40,7 +40,7 @@ public class Notifications {
                         while (j < project.getMilestones().size()) {
                             Milestone milestone = project.getMilestones().get(j);
                             int milestoneDays = daysUntil(milestone.getDate());
-                            if (milestoneDays <= student.getNotifyDays()) {
+                            if (isDueSoon(milestone.getDate(), student.getNotifyDays())) {
                                 this.addMessage(messages, milestone.getKind() + ": "
                                         + milestone.getTitle() + " (" + project.getName() + ")",
                                         milestone.getDate(), milestoneDays);
@@ -54,7 +54,7 @@ public class Notifications {
                             if (task.getAssignedStudentId().equals(student.getId())
                                     && task.isDone() == false) {
                                 int taskDays = daysUntil(task.getDeadline());
-                                if (taskDays <= student.getNotifyDays()) {
+                                if (isDueSoon(task.getDeadline(), student.getNotifyDays())) {
                                     this.addMessage(messages, "Your task: " + task.getTitle()
                                             + " (" + project.getName() + ")",
                                             task.getDeadline(), taskDays);

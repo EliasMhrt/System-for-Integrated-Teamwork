@@ -152,6 +152,14 @@ public class PortalSync {
     }
 
     /**
+     * Gets portal file name.
+     * @return the result
+     */
+    public String getPortalFileName() {
+        return this.fileName;
+    }
+
+    /**
      * Gets milestones added.
      * @return the result
      */
