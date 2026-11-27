@@ -75,6 +75,14 @@ public class Milestone {
     }
 
     /**
+     * Gets a short summary of the item.
+     * @return the result
+     */
+    public String getSummary() {
+        return "Milestone: " + this.title + " [" + this.kind + "]";
+    }
+
+    /**
      * Returns a short text for this object.
      * @return the result
      */
