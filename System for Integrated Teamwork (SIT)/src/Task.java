@@ -130,6 +130,14 @@ public class Task {
     }
 
     /**
+     * Gets a short summary of the item.
+     * @return the result
+     */
+    public String getSummary() {
+        return "Task " + this.id + ": " + this.title + " [" + this.status + "]";
+    }
+
+    /**
      * Checks if the task is done.
      * @return the result
      */
