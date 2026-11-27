@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static final String LEVEL = "Level 2";
+    public static final String LEVEL = "Level 3";
 
     private static final String DATA_FILE = "data.txt";
     private static final String PORTAL_FILE = "sit_portal.txt";
@@ -175,6 +175,11 @@ public class Main {
     private static void printPrompt(String prompt) {
         System.out.print(prompt);
         System.out.flush();
+    }
+
+    private static void printSectionHeader(String title) {
+        System.out.println();
+        System.out.println("--- " + title + " ---");
     }
 
     private static void printDenied(Student user) {
