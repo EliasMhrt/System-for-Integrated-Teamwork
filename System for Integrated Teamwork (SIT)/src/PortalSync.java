@@ -159,6 +159,15 @@ public class PortalSync {
         return this.milestonesAdded;
     }
 
+    /**
+     * Checks if the portal file is available.
+     * @return the result
+     */
+    public boolean isPortalAvailable() {
+        java.io.File portalFile = new java.io.File(this.fileName);
+        return portalFile.exists();
+    }
+
     private String[] splitLine(String line) {
         ArrayList<String> pieces = new ArrayList<String>();
         String currentPiece = "";

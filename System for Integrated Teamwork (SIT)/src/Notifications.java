@@ -75,6 +75,21 @@ public class Notifications {
         return messages;
     }
 
+    /**
+     * Checks if a date is soon.
+     * @param date the date
+     * @param days the number of reminder days
+     * @return the result
+     */
+    public static boolean isDueSoon(String date, int days) {
+        int remaining = daysUntil(date);
+        boolean soon = false;
+        if (remaining <= days) {
+            soon = true;
+        }
+        return soon;
+    }
+
     private void addMessage(ArrayList<String> messages, String label, String date, int days) {
         String when = "";
         if (days < 0) {
