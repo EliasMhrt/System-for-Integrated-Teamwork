@@ -313,6 +313,19 @@ public class Project {
     }
 
     /**
+     * Gets a short summary for the dashboard.
+     * @return the result
+     */
+    public String getDashboardSummary() {
+        String text = "Project " + this.id + ": " + this.name;
+        text = text + " | Deadline: " + this.deadline;
+        text = text + " | Tasks: " + this.tasks.size();
+        text = text + " | Done: " + this.getDoneTaskCount();
+        text = text + " | Progress: " + this.getProgressPercent() + "%";
+        return text;
+    }
+
+    /**
      * Returns a short text for this object.
      * @return the result
      */
