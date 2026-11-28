@@ -176,6 +176,7 @@ public class Student {
         text = text + " | Number: " + this.studentNumber;
         text = text + " | Role: " + this.role;
         text = text + " | Email: " + this.email;
+        text = text + " | Notify: " + this.notifyDays + " day(s), enabled=" + this.notifyEnabled;
         return text;
     }
 }
