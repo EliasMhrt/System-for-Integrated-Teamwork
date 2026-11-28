@@ -171,6 +171,9 @@ public class Task {
         text = text + " | Deadline: " + this.deadline;
         text = text + " | Status: " + this.status;
         text = text + " | Assigned student ID: " + this.assignedStudentId;
+        if (this.isOverdue()) {
+            text = text + " (OVERDUE)";
+        }
         return text;
     }
 }
