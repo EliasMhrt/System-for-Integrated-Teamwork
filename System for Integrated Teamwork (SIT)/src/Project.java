@@ -322,6 +322,7 @@ public class Project {
         text = text + " | Tasks: " + this.tasks.size();
         text = text + " | Done: " + this.getDoneTaskCount();
         text = text + " | Progress: " + this.getProgressPercent() + "%";
+        text = text + " | Check-ins: " + this.milestones.size();
         return text;
     }
 
@@ -335,6 +336,7 @@ public class Project {
         text = text + " | Team size: " + this.team.size();
         text = text + " | Tasks: " + this.tasks.size();
         text = text + " | Progress: " + this.getProgressPercent() + "%";
+        text = text + " | Check-ins: " + this.milestones.size();
         return text;
     }
 }
