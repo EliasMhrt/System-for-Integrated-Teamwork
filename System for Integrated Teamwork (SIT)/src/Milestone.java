@@ -88,6 +88,9 @@ public class Milestone {
      */
     public String toString() {
         String text = this.date + " | " + this.kind + ": " + this.title;
+        if (this.isOverdue()) {
+            text = text + " (OVERDUE)";
+        }
         return text;
     }
 }
